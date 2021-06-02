@@ -1,16 +1,35 @@
-// Zagranie komputera
+'use strict';
 
-let randomInteger = Math.floor(Math.random() * 3 + 1);
-console.log('Komputer wylosował: ' + randomInteger);
-let computerMove = getMoveName(randomInteger);
-console.log('Ruch komputera to: ' + computerMove);
-// Zagranie gracza
+function playGame(playerInput) {
+    //clearMessages();
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyczki');
-console.log('Gracz wybrał: ' + playerInput);
-let playerMove = getMoveName(playerInput);
-console.log('Ruch gracza to: ' + playerMove);
+    // Zagranie komputera
 
-// Rozstygnięcie gry
+    let randomInteger = Math.floor(Math.random() * 3 + 1);
+    console.log('Komputer wylosował: ' + randomInteger);
+    let computerMove = getMoveName(randomInteger);
+    console.log('Ruch komputera to: ' + computerMove);
 
-printMessage('komputer wylosował ' + computerMove + ', gracz wybrał ' + playerMove + '. Wynik to ' + displayResult(computerMove, playerMove));
+    // Zagranie gracza
+
+    console.log('Gracz wybrał: ' + playerInput);
+    let playerMove = getMoveName(playerInput);
+    console.log('Ruch gracza to: ' + playerMove);
+
+    // Rozstygnięcie gry
+
+    printMessage('komputer wylosował ' + computerMove + ', gracz wybrał ' + playerMove + '. Wynik to ' + displayResult(computerMove, playerMove));
+
+}
+
+document.getElementById('play-paper').addEventListener('click', function () {
+    playGame(1);
+});
+
+document.getElementById('play-rock').addEventListener('click', function () {
+    playGame(2);
+});
+
+document.getElementById('play-scissors').addEventListener('click', function () {
+    playGame(3);
+});

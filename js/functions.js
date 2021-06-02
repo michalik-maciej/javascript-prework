@@ -1,3 +1,5 @@
+'use strict';
+
 function printMessage(msg) {
     console.log('wywołanie funkcji printMessage z argumentem: ', msg);
     let div = document.createElement('div');
