@@ -2,7 +2,7 @@
     'use strict';
 
     function playGame(playerInput) {
-        clearMessages();
+        document.getElementById('messages').innerHTML = '';
 
         // Zagranie komputera
 
@@ -19,7 +19,9 @@
 
         // Rozstygnięcie gry
 
-        printMessage('komputer wylosował ' + computerMove + ', gracz wybrał ' + playerMove + '. Wynik to ' + displayResult(computerMove, playerMove));
+        const div = document.createElement('div');
+        div.innerHTML = 'komputer wylosował ' + computerMove + ', gracz wybrał ' + playerMove + '. Wynik to ' + displayResult(computerMove, playerMove);
+        document.getElementById('messages').appendChild(div);
 
     }
 

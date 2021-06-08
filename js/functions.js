@@ -7,10 +7,6 @@ function printMessage(msg) {
     document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages() {
-    document.getElementById('messages').innerHTML = '';
-}
-
 function getMoveName(moveId) {
     console.log('wywołanie funkcji getMoveName z argumentem: ', moveId);
     if (moveId == 1) {
