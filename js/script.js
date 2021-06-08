@@ -1,35 +1,37 @@
-'use strict';
+{
+    'use strict';
 
-function playGame(playerInput) {
-    //clearMessages();
+    function playGame(playerInput) {
+        clearMessages();
 
-    // Zagranie komputera
+        // Zagranie komputera
 
-    let randomInteger = Math.floor(Math.random() * 3 + 1);
-    console.log('Komputer wylosował: ' + randomInteger);
-    let computerMove = getMoveName(randomInteger);
-    console.log('Ruch komputera to: ' + computerMove);
+        const randomInteger = Math.floor(Math.random() * 3 + 1);
+        console.log('Komputer wylosował: ' + randomInteger);
+        const computerMove = getMoveName(randomInteger);
+        console.log('Ruch komputera to: ' + computerMove);
 
-    // Zagranie gracza
+        // Zagranie gracza
 
-    console.log('Gracz wybrał: ' + playerInput);
-    let playerMove = getMoveName(playerInput);
-    console.log('Ruch gracza to: ' + playerMove);
+        console.log('Gracz wybrał: ' + playerInput);
+        const playerMove = getMoveName(playerInput);
+        console.log('Ruch gracza to: ' + playerMove);
 
-    // Rozstygnięcie gry
+        // Rozstygnięcie gry
 
-    printMessage('komputer wylosował ' + computerMove + ', gracz wybrał ' + playerMove + '. Wynik to ' + displayResult(computerMove, playerMove));
+        printMessage('komputer wylosował ' + computerMove + ', gracz wybrał ' + playerMove + '. Wynik to ' + displayResult(computerMove, playerMove));
 
+    }
+
+    document.getElementById('play-paper').addEventListener('click', function () {
+        playGame(1);
+    });
+
+    document.getElementById('play-rock').addEventListener('click', function () {
+        playGame(2);
+    });
+
+    document.getElementById('play-scissors').addEventListener('click', function () {
+        playGame(3);
+    });
 }
-
-document.getElementById('play-paper').addEventListener('click', function () {
-    playGame(1);
-});
-
-document.getElementById('play-rock').addEventListener('click', function () {
-    playGame(2);
-});
-
-document.getElementById('play-scissors').addEventListener('click', function () {
-    playGame(3);
-});
